@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours de Maths-Sciences - M. Gibert</title>
+    <style>
+        /* --- Styles de base et Fond "Papier à carreaux" --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Couleur de fond bleu/vert très très douce */
+            background-color: #e6f2f1; 
+            /* Création de la grille façon cahier de maths */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+            background-size: 20px 20px;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* --- En-tête --- */
+        .header {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-bottom: 5px solid #4299e1;
+        }
+
+        .header img {
+            max-height: 80px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .header-titre {
+            text-align: center;
+        }
+
+        .header-titre h1 {
+            margin: 0;
+            font-size: 2.4em;
+            color: #ebf8ff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .header-titre h2 {
+            margin: 5px 0 0 0;
+            font-size: 1.1em;
+            font-weight: normal;
+            color: #90cdf4;
+        }
+
+        /* --- Conteneur central --- */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* --- Frise de symboles mathématiques/scientifiques --- */
+        .deco-maths {
+            text-align: center;
+            font-size: 2.2em;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Espace entre les symboles */
+            opacity: 0.7;
+        }
+
+        /* --- Blocs par niveaux --- */
+        .bloc-niveau {
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            /* Fond blanc semi-transparent pour garder le bloc lisible sur la grille */
+            background-color: rgba(255, 255, 255, 0.95); 
+        }
+
+        /* Couleurs personnalisées des bordures */
+        .bloc-seconde { border-top: 5px solid #38b2ac; }
+        .bloc-premiere { border-top: 5px solid #ed8936; }
+        .bloc-terminale { border-top: 5px solid #9f7aea; }
+        .bloc-bts { border-top: 5px solid #f687b3; }
+
+        /* --- Titres des niveaux --- */
+        .titre-niveau {
+            display: flex;
+            align-items: center;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Les petits badges (2nde, 1ère, Term, BTS) */
+        .badge {
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 15px;
+            font-size: 0.8em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .icone-titre {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .bloc-seconde .titre-niveau { color: #234e52; }
+        .bloc-seconde .badge { color: #319795; }
+        
+        .bloc-premiere .titre-niveau { color: #7b341e; }
+        .bloc-premiere .badge { color: #dd6b20; }
+        
+        .bloc-terminale .titre-niveau { color: #44337a; }
+        .bloc-terminale .badge { color: #805ad5; }
+
+        .bloc-bts .titre-niveau { color: #702459; }
+        .bloc-bts .badge { color: #d53f8c; }
+
+        /* --- Boutons (Maths, Physique, Tutos) --- */
+        .boutons-groupe {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: white;
+            color: #2d3748;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1; 
+            min-width: 220px;
+            justify-content: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .bloc-seconde .btn:hover { border-color: #38b2ac; color: #319795; }
+        .bloc-premiere .btn:hover { border-color: #ed8936; color: #dd6b20; }
+        .bloc-terminale .btn:hover { border-color: #9f7aea; color: #805ad5; }
+        .bloc-bts .btn:hover { border-color: #f687b3; color: #d53f8c; }
+
+        .emoji {
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="logo_bleriot.png" alt="Logo Lycée Bleriot">
+        
+        <div class="header-titre">
+            <h1>Les cours et tutos de M. Gibert</h1>
+            <h2>Mathématiques et Sciences Physiques en Lycée Professionnel</h2>
+        </div>
+
+        <img src="logo_ac_lille.png" alt="Logo Académie de Lille">
+    </header>
+
+    <div class="container">
+        
+        <div class="deco-maths">
+            <span>∑</span> <span>∫</span> <span>π</span> <span>∞</span> <span>√x</span> <span>Δ</span> <span>Ω</span>
+        </div>
+
+        <div class="bloc-niveau bloc-seconde">
+            <h2 class="titre-niveau">
+                <span class="icone-titre">🧬</span>
+                <span class="badge">2nde</span> Classe de Seconde
+            </h2>
+            <div class="boutons-groupe">
+                <a href="seconde/maths.html" class="btn"><span class="emoji">📐</span> Mathématiques</a>
+                <a href="seconde/sciences.html" class="btn"><span class="emoji">🔬</span> Sciences physiques</a>
+                <a href="seconde/tutos.html" class="btn"><span class="emoji">💡</span> Tutoriels</a>
+            </div>
+        </div>
+
+        <div class="bloc-niveau bloc-premiere">
+            <h2 class="titre-niveau">
+                <span class="icone-titre">🧭</span>
+                <span class="badge">1ère</span> Classe de Première
+            </h2>
+            <div class="boutons-groupe">
+                <a href="premiere/maths.html" class="btn"><span class="emoji">📈</span> Mathématiques</a>
+                <a href="premiere/sciences.html" class="btn"><span class="emoji">🧪</span> Sciences physiques</a>
+                <a href="premiere/tutos.html" class="btn"><span class="emoji">⚙️</span> Tutoriels</a>
+            </div>
+        </div>
+
+        <div class="bloc-niveau bloc-terminale">
+            <h2 class="titre-niveau">
+                <span class="icone-titre">🧠</span>
+                <span class="badge">Term</span> Classe de Terminale
+            </h2>
+            <div class="boutons-groupe">
+                <a href="terminale/maths.html" class="btn"><span class="emoji">🧮</span> Mathématiques</a>
+                <a href="terminale/sciences.html" class="btn"><span class="emoji">⚛️</span> Sciences physiques</a>
+                <a href="terminale/tutos.html" class="btn"><span class="emoji">🚀</span> Tutoriels</a>
+            </div>
+        </div>
+
+        <div class="bloc-niveau bloc-bts">
+            <h2 class="titre-niveau">
+                <span class="icone-titre">🎓</span>
+                <span class="badge">BTS</span> Les modules BTS
+            </h2>
+            <div class="boutons-groupe">
+                <a href="bts/maths.html" class="btn"><span class="emoji">📊</span> Mathématiques</a>
+                <a href="bts/sciences.html" class="btn"><span class="emoji">📡</span> Sciences physiques</a>
+                <a href="bts/tutos.html" class="btn"><span class="emoji">💻</span> Tutoriels</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
