@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutoriels 1ère - M. Gibert</title>
+    <style>
+        /* --- Styles de base et Fond --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6f2f1; 
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+            background-size: 20px 20px;
+            margin: 0; padding: 0; color: #333;
+        }
+
+        /* --- En-tête --- */
+        .header {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-bottom: 5px solid #ed8936; /* Orange Première */
+        }
+
+        .header img {
+            max-height: 80px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .header-titre { text-align: center; }
+        .header-titre h1 { margin: 0; font-size: 2.2em; color: #ebf8ff; }
+
+        /* --- Conteneur central --- */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* --- Bouton Retour --- */
+        .btn-retour {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #1a365d;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s;
+        }
+        .btn-retour:hover {
+            background-color: #f7fafc;
+            transform: translateX(-5px);
+        }
+
+        /* --- Titre Section (Orange) --- */
+        .titre-page-orange {
+            background-color: #fef4e2;
+            border-left: 8px solid #ed8936;
+            padding: 20px 30px;
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .titre-page-orange h2 {
+            margin: 0;
+            color: #7b341e;
+            font-size: 2em;
+        }
+
+        /* --- Cartes Tutoriels --- */
+        .carte-tuto {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #ed8936;
+        }
+
+        .tuto-titre {
+            font-size: 1.5em;
+            color: #2d3748;
+            margin: 0 0 10px 0;
+        }
+
+        .badge-tuto {
+            display: inline-block;
+            background-color: #feebc8;
+            color: #c05621;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-lien {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            transition: 0.2s;
+        }
+        .btn-lien:hover { background-color: #e5e7eb; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="../logo_bleriot.png" alt="Logo Lycée Bleriot">
+        <div class="header-titre">
+            <h1>Les cours de M. Gibert</h1>
+            <h2 style="margin:5px 0 0 0; font-size:1em; font-weight:normal; color:#90cdf4;">Espace Tutoriels - Première</h2>
+        </div>
+        <img src="../logo_ac_lille.png" alt="Logo Académie de Lille">
+    </header>
+
+    <div class="container">
+        
+        <a href="../index.html" class="btn-retour">
+            <span>←</span> Retour à l'accueil
+        </a>
+
+        <div class="titre-page-orange">
+            <span style="font-size: 2.5em;">⚙️</span>
+            <h2>Tutoriels - Première</h2>
+        </div>
+
+        <div class="carte-tuto">
+            <span class="badge-tuto">CALCULATRICE</span>
+            <h3 class="tuto-titre">Maîtriser les fonctions et les suites</h3>
+            <p>Apprendre à utiliser le menu "Suites" et "Fonctions" de votre calculatrice pour les exercices de Première.</p>
+            <a href="#" class="btn-lien">📖 Voir le tutoriel</a>
+        </div>
+
+        <div class="carte-tuto">
+            <span class="badge-tuto">MÉTHODE</span>
+            <h3>Rédiger un compte-rendu de TP</h3>
+            <p>Les étapes clés pour présenter vos mesures et vos conclusions en Sciences Physiques.</p>
+            <a href="#" class="btn-lien">📄 Télécharger le guide</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
