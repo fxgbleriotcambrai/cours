@@ -4,54 +4,132 @@
     <meta charset="UTF-8">
     <title>Mathématiques 2nde - M. Gibert</title>
     <style>
+        /* --- Styles de base et Fond Papier Millimétré --- */
         body {
             font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
             background-color: #eaf3f0;
             background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 25 0 L 0 0 0 25' fill='none' stroke='%23d1e3df' stroke-width='1'/%3E%3C/svg%3E");
             margin: 0; padding: 0; color: #333;
         }
+
+        /* --- En-tête --- */
         .header {
-            background-color: #1a2b4c; color: white; padding: 15px 30px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 5px solid #27ae60;
+            background-color: #1a2b4c; 
+            color: white; 
+            padding: 15px 30px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 5px solid #27ae60; /* Vert Seconde */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .header img { max-height: 80px; background-color: white; padding: 5px; border-radius: 8px; }
+
+        /* --- Conteneur --- */
         .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+
+        /* --- Bouton Retour --- */
         .btn-retour {
             display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
             color: #1a2b4c; background-color: white; padding: 10px 20px; border-radius: 50px;
             font-weight: bold; border: 1px solid #cbd5e1; margin-bottom: 30px;
+            transition: 0.2s;
         }
+        .btn-retour:hover { transform: translateX(-5px); background-color: #f8fafc; }
+
+        /* --- Titre de la page --- */
         .titre-page {
-            background-color: #eafbea; border-left: 8px solid #27ae60; padding: 20px 30px;
-            border-radius: 0 15px 15px 0; margin-bottom: 40px; display: flex; align-items: center; gap: 20px;
+            background-color: #eafbea; 
+            border-left: 8px solid #27ae60; 
+            padding: 20px 30px;
+            border-radius: 0 15px 15px 0; 
+            margin-bottom: 40px; 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         .titre-page h2 { margin: 0; color: #1e8449; font-size: 2em; }
+
+        /* --- Carte Chapitre --- */
         .chapitre-carte {
-            background: white; border-radius: 12px; padding: 25px; margin-bottom: 30px;
-            border: 1px solid #e2e8f0; border-top: 5px solid #27ae60;
+            background: white; 
+            border-radius: 12px; 
+            padding: 25px; 
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0; 
+            border-top: 5px solid #27ae60;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .btn-ressource { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
-        .btn-pdf { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
-        .btn-word { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+        .chapitre-titre { 
+            font-size: 1.5em; 
+            color: #2d3748; 
+            margin: 0 0 15px 0; 
+            border-bottom: 2px dashed #edf2f7; 
+            padding-bottom: 10px;
+        }
+
+        /* --- Groupe de boutons --- */
+        .ressources-groupe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+        
+        .btn-ressource {
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 10px 18px;
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.95em; 
+            transition: 0.2s;
+        }
+        .btn-ressource:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        /* Couleurs des boutons harmonisées */
+        .btn-pdf { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; } /* Rouge */
+        .btn-word { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; } /* Bleu */
+        .btn-corrige { background-color: #fef3c7; color: #92400e; border: 1px solid #fcd34d; } /* Jaune Ambre */
     </style>
 </head>
 <body>
+
     <header class="header">
-        <img src="../logo_bleriot.png" alt="Logo">
-        <div style="text-align:center"><h1>M. Gibert</h1><h2>Mathématiques Seconde</h2></div>
-        <img src="../logo_ac_lille.png" alt="Logo">
+        <img src="../logo_bleriot.png" alt="Logo Lycée Bleriot">
+        <div style="text-align:center">
+            <h1>Les cours de M. Gibert</h1>
+            <h2 style="margin:5px 0 0 0; font-size:1.1em; font-weight:normal; opacity:0.9;">Mathématiques - Seconde</h2>
+        </div>
+        <img src="../logo_ac_lille.png" alt="Logo Académie de Lille">
     </header>
+
     <div class="container">
-        <a href="../index.html" class="btn-retour">← Retour Accueil</a>
-        <div class="titre-page"><span style="font-size: 2.5em;">📐</span><h2>Mathématiques - Seconde</h2></div>
+        
+        <a href="../index.html" class="btn-retour"><span>←</span> Retour à l'accueil</a>
+
+        <div class="titre-page">
+            <span style="font-size: 2.5em;">📐</span>
+            <h2>Mathématiques - Classe de Seconde</h2>
+        </div>
+        
         <div class="chapitre-carte">
-            <h3 style="margin-top:0; color:#2d3748; border-bottom: 2px dashed #edf2f7; padding-bottom:10px;">Chapitre 1 : Titre du cours</h3>
-            <div style="display:flex; gap:12px; margin-top:15px;">
-                <a href="documents/cours1.pdf" class="btn-ressource btn-pdf">📄 Cours (PDF)</a>
-                <a href="documents/cours1.docx" class="btn-ressource btn-word">📝 Cours (Word)</a>
+            <h3 class="chapitre-titre">Leçon 1 : à venir</h3>
+            <div class="ressources-groupe">
+                <a href="documents/cours-chap1.pdf" class="btn-ressource btn-pdf">📄 Cours</a>
+                <a href="documents/exos-chap1.pdf" class="btn-ressource btn-word">📝 Exercices</a>
+                <a href="documents/corrige-chap1.pdf" class="btn-ressource btn-corrige">🎯 Corrigé</a>
             </div>
         </div>
+
+        <div class="chapitre-carte">
+            <h3 class="chapitre-titre">Leçon 2 : à venir</h3>
+            <div class="ressources-groupe">
+                <a href="documents/cours-chap2.pdf" class="btn-ressource btn-pdf">📄 Cours</a>
+                <a href="documents/exos-chap2.pdf" class="btn-ressource btn-word">📝 Exercices</a>
+                <a href="documents/corrige-chap2.pdf" class="btn-ressource btn-corrige">🎯 Corrigé</a>
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>
